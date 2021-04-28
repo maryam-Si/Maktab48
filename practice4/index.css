@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 2% auto;
+}
+
+.accordion-btn {
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #6d6868;
+    padding: 2%;
+    transition: background-color .4s ease-in-out;
+    position: relative;
+}
+
+.accordion-btn::after {
+    content: '\002B';
+    position: absolute;
+    right: 2%;
+}
+
+.accordion-btn:hover {
+    background-color: #c7c1c1;
+}
+
+.plus {
+    position: absolute;
+    right: 2%;
+}
+
+.content {
+    padding: 2%;
+    overflow: hidden;
+    display: none;
+}
+
+.active {
+    background-color: #c7c1c1;
+}
+
+.active::after {
+    content: "\2212";
+    position: absolute;
+    right: 2%;
+}
+
+.show {
+    display: block;
+
+}
