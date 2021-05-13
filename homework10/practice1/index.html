@@ -17,9 +17,11 @@
 
             <div class="col-md-6 col-lg-6 col-sm-12 text-center p-2">
                 مالیات کل:
+                <span id='total-tax'></span>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 bg-danger text-center p-2">
                 مبلغ کل:
+                <span id='total'></span>
             </div>
 
         </div>
@@ -55,6 +57,10 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
         $(document).ready(function () {
+            let allRowsCost = 0;
+            let totalTax = 0
+            let maliat = $('#total-tax').text(totalTax)
+            let total = $('#total').text(allRowsCost)
             let index = 0
             $('button.add-btn').click(function (i, v) {
                 index++
@@ -88,7 +94,8 @@
                                 <input id='tax' type="text">
                         </td>
                         <td class=" font-weight-normal">
-                                <input id='total-cost' type="text">
+                            <span id="total-cost">0</span>
+
                         </td>
                         <td class=" font-weight-normal">
                                 <button class="save-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -123,16 +130,41 @@
                 }
             })
             $(document).on('click', '.save-btn', function () {
+                let unit = $(this).parent().parent().find('#unit').val();
+                let describe = $(this).parent().parent().find('#describe').val();
+                let unitCost = parseInt($(this).parent().parent().find('#unit-cost').val());
+                let number = parseInt($(this).parent().parent().find('#number').val());
+                let discount = parseInt($(this).parent().parent().find('#discount').val());
+                let currentTax = parseInt($(this).parent().parent().find('#tax').val());
+                let result = (number * unitCost) - ((number * unitCost) * (discount / 100)) + currentTax
+                let currentTotalCost = $(this).parent().parent().find('#total-cost').text(
+                    `${result.toLocaleString()}ریال`);
+                console.log(currentTotalCost);
+                totalTax += currentTax;
+                allRowsCost += result;
 
-                $(this).parent().parent().find('input').each(function () {
-                    $(this).replaceWith($(this).val())
+                total.text(`${allRowsCost.toLocaleString()}ریال`)
+                maliat.text(`${totalTax.toLocaleString()}ریال`)
 
-                });
+                console.log(allRowsCost);
+                $(this).parent().parent().find('input#describe').replaceWith(describe)
+                $(this).parent().parent().find('input#unit').replaceWith(unit)
+                $(this).parent().parent().find('input#number').replaceWith(number)
+                $(this).parent().parent().find('input#unit-cost').replaceWith(
+                    `${unitCost.toLocaleString()}ریال`)
+                $(this).parent().parent().find('input#tax').replaceWith(currentTax.toLocaleString())
+                $(this).parent().parent().find('input#discount').replaceWith(
+                    `${((number * unitCost) * (discount / 100)).toLocaleString()}ریال`)
+
+
+
+
 
 
 
                 $(this).parent().parent().find('select#optionType').replaceWith($(this).val())
-                $(this).replaceWith(`                        <button class="delete-btn">
+                $(this).replaceWith(`
+                <button class="delete-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-trash" viewBox="0 0 16 16">
                         <path
@@ -151,6 +183,15 @@
 
             })
             $(document).on('click', '.delete-btn', function () {
+                index--
+                let currentTotalCost = parseInt($(this).parent().parent().find('#total-cost').val());
+                let discount = parseInt($(this).parent().parent().find('#discount').val());
+
+                allRowsCost -= currentTotalCost
+                let currentTax = parseInt($(this).parent().parent().find('#tax').val());
+                totalTax -= currentTax
+                total.text(allRowsCost)
+                maliat.text(totalTax)
 
                 $(this).parent().parent().remove()
 
@@ -159,46 +200,47 @@
 
                 $(this).parent().parent().replaceWith(`
                 <tr>
-                <td class=" font-weight-normal">${index}</td>
-                <td class=" font-weight-normal">
-                    <select name="option" id="optionType">
-                        <option value="" disabled selected hidden>...select</option>
-                        <option value="1">کالا</option>
-                        <option value="0">خدمات</option>
+                    <td class=" font-weight-normal">${index}</td>
+                        <td class=" font-weight-normal">
+                            <select name="option" id="optionType">
+                                <option value="" disabled selected hidden>...select</option>
+                                <option value="1">کالا</option>
+                                <option value="0">خدمات</option>
 
-                    </select>
-                </td>
-                <td class=" font-weight-normal">
-                        <input id='describe' type="text">
-                </td>
-                <td class=" font-weight-normal">
-                        <input id='unit' type="text">
-                </td>
-                <td class=" font-weight-normal">
-                        <input id='number' type="text">
-                </td>
-                <td class=" font-weight-normal"> 
-                        <input id='unit-cost' type="text">
-                </td>
-                <td class=" font-weight-normal">
-                        <input id='discount'type="text">
-                </td>
-                <td class=" font-weight-normal">
-                        <input id='tax' type="text">
-                </td>
-                <td class=" font-weight-normal">
-                        <input id='total-cost' type="text">
-                </td>
-                <td class=" font-weight-normal">
-                        <button class="save-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-archive" viewBox="0 0 16 16">
-                    <path
-                        d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
-                </svg>
-                
-                </button> 
+                            </select>
+                        </td>
+                        <td class=" font-weight-normal">
+                                <input id='describe' type="text">
+                        </td>
+                        <td class=" font-weight-normal">
+                                <input id='unit' type="text">
+                        </td>
+                        <td class=" font-weight-normal">
+                                <input id='number' type="text">
+                        </td>
+                        <td class=" font-weight-normal"> 
+                                <input id='unit-cost' type="text">
+                        </td>
+                        <td class=" font-weight-normal">
+                                <input id='discount'type="text">
+                        </td>
+                        <td class=" font-weight-normal">
+                                <input id='tax' type="text">
+                        </td>
+                        <td class=" font-weight-normal">
+                            <span id="total-cost">0</span>
 
-                </td>
+                        </td>
+                        <td class=" font-weight-normal">
+                                <button class="save-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-archive" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                        
+                        </button> 
+
+                        </td>
                 </tr>
         
             `)
