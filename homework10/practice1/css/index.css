@@ -1,0 +1,51 @@
+.bg-danger {
+    background-color: pink !important;
+}
+
+.display-5 {
+    font-size: 1.2rem;
+}
+
+table thead th {
+    opacity: 0.7;
+}
+
+
+button.add-btn {
+    border: none !important;
+    outline: none !important;
+
+}
+
+button.save-btn {
+    border: none !important;
+    outline: none !important;
+    color: rgb(13, 13, 146);
+}
+
+button.delete-btn {
+    border: none !important;
+    outline: none !important;
+    color: red;
+}
+
+button.edit-btn {
+    border: none !important;
+    outline: none !important;
+    color: #03a9f4;
+}
+
+table tr td input {
+    overflow: visible;
+    border: none;
+    outline-color: #03a9f4 !important;
+    width: 80%;
+
+}
+
+.table-bordered thead th,
+.table-bordered thead td {
+    border-bottom-width: 2px;
+    padding-top: 1%;
+    width: 10%;
+}
