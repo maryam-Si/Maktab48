@@ -1,0 +1,20 @@
+.button {
+    display: flex;
+    /* height: 3em; */
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    font-size: 1.8em;
+    background-color: #3c3b3b;
+    color: #ece3e3;
+    border-radius: 54%;
+    margin: 2%;
+    padding: 5%;
+    cursor: pointer;
+}
+
+.operator {
+    background-color: #fe9241;
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+.calc-wrapper {
+  width: 400px;
+  height: 516px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: black;
+}
+.calc-wrapper .row {
+  display: flex;
+  width: 100%;
+}
+
+/*# sourceMappingURL=calculator.css.map */
