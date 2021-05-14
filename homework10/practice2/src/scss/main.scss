@@ -1,0 +1,46 @@
+@import'variable';
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+.btn {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    margin: 26px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: inherit;
+    color: white;
+    width: 17%;
+    margin-left: 144px;
+
+    &--green {
+        background-color: $success;
+    }
+
+    &--curve {
+        border-radius: 50px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
