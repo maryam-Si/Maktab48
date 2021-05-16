@@ -11,6 +11,7 @@ const Calculator = () => {
 
   function addInput(val) {
     setInput(input + val);
+    setCurrentNumber(input + val);
   }
   function addZero(val) {
     if (input !== "") {
@@ -26,39 +27,49 @@ const Calculator = () => {
     setInput("");
   }
   function add() {
-    setPrevNumber(input);
+    setPrevNumber(currentNumber);
+    setCurrentNumber("");
     setInput("");
     setOperator("plus");
   }
   function subtraction() {
-    setPrevNumber(input);
+    setPrevNumber(currentNumber);
+    setCurrentNumber("");
     setInput("");
     setOperator("minus");
   }
   function divide() {
-    setPrevNumber(input);
+    setPrevNumber(currentNumber);
+    setCurrentNumber("");
     setInput("");
     setOperator("divide");
   }
   function multiply() {
-    setPrevNumber(input);
+    setPrevNumber(currentNumber);
     setInput("");
+    setCurrentNumber("");
     setOperator("multiply");
   }
   function equal() {
     setCurrentNumber(input);
+
     switch (operator) {
       case "plus":
         setInput(parseInt(prevNumber) + parseInt(currentNumber));
+        setCurrentNumber(parseInt(prevNumber) + parseInt(currentNumber));
+
         break;
       case "minus":
         setInput(parseInt(prevNumber) - parseInt(currentNumber));
+        setCurrentNumber(parseInt(prevNumber) - parseInt(currentNumber));
         break;
       case "divide":
         setInput(parseInt(prevNumber) / parseInt(currentNumber));
+        setCurrentNumber(parseInt(prevNumber) / parseInt(currentNumber));
         break;
       case "multiply":
         setInput(parseInt(prevNumber) * parseInt(currentNumber));
+        setCurrentNumber(parseInt(prevNumber) * parseInt(currentNumber));
         break;
 
       default:
