@@ -18,10 +18,12 @@
             <div class="col-md-6 col-lg-6 col-sm-12 text-center p-2">
                 مالیات کل:
                 <span id='total-tax'></span>
+                ریال
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 bg-danger text-center p-2">
                 مبلغ کل:
                 <span id='total'></span>
+                ریال
             </div>
 
         </div>
@@ -138,13 +140,13 @@
                 let currentTax = parseInt($(this).parent().parent().find('#tax').val());
                 let result = (number * unitCost) - ((number * unitCost) * (discount / 100)) + currentTax
                 let currentTotalCost = $(this).parent().parent().find('#total-cost').text(
-                    `${result.toLocaleString()}ریال`);
+                    result.toLocaleString());
                 console.log(currentTotalCost);
                 totalTax += currentTax;
                 allRowsCost += result;
 
-                total.text(`${allRowsCost.toLocaleString()}ریال`)
-                maliat.text(`${totalTax.toLocaleString()}ریال`)
+                total.text(allRowsCost.toLocaleString())
+                maliat.text(totalTax.toLocaleString())
 
                 console.log(allRowsCost);
                 $(this).parent().parent().find('input#describe').replaceWith(describe)
@@ -152,7 +154,7 @@
                 $(this).parent().parent().find('input#number').replaceWith(number)
                 $(this).parent().parent().find('input#unit-cost').replaceWith(
                     `${unitCost.toLocaleString()}ریال`)
-                $(this).parent().parent().find('input#tax').replaceWith(currentTax.toLocaleString())
+                $(this).parent().parent().find('input#tax').text(currentTax.toLocaleString())
                 $(this).parent().parent().find('input#discount').replaceWith(
                     `${((number * unitCost) * (discount / 100)).toLocaleString()}ریال`)
 
@@ -184,11 +186,16 @@
             })
             $(document).on('click', '.delete-btn', function () {
                 index--
-                let currentTotalCost = parseInt($(this).parent().parent().find('#total-cost').val());
-                let discount = parseInt($(this).parent().parent().find('#discount').val());
+                let currentTotalCost = parseInt($(this).parent().parent().find('#total-cost').text()
+                    .replace(
+                        /\D/g, ''));
 
-                allRowsCost -= currentTotalCost
-                let currentTax = parseInt($(this).parent().parent().find('#tax').val());
+
+                allRowsCost -= currentTotalCost;
+                let currentTax = parseInt($(this).parent().parent().find('#tax').text().replace(
+                    /\D/g, ''));
+
+                console.log(currentTax);
                 totalTax -= currentTax
                 total.text(allRowsCost)
                 maliat.text(totalTax)
@@ -197,6 +204,21 @@
 
             })
             $(document).on('click', '.edit-btn', function () {
+
+
+                let currentTotalCost = parseInt($(this).parent().parent().find('#total-cost').text()
+                    .replace(
+                        /\D/g, ''));
+
+
+                allRowsCost -= currentTotalCost;
+                let currentTax = parseInt($(this).parent().parent().find('#tax').text().replace(
+                    /\D/g, ''));
+
+                console.log(currentTax);
+                totalTax -= currentTax
+                total.text(allRowsCost)
+                maliat.text(totalTax)
 
                 $(this).parent().parent().replaceWith(`
                 <tr>
