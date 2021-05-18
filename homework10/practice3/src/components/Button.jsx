@@ -7,7 +7,7 @@ const Button = ({ title, handleClick }) => {
   };
   return (
     <div
-      className={`button ${isOperator(title) ? "" : "operator"}`}
+      className={`button ${isOperator(title) ? "" : "operator"} `}
       onClick={handleClick}>
       {title}
     </div>

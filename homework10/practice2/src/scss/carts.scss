@@ -16,13 +16,16 @@
         box-shadow: 1px 4px 8px 2px rgb(0 0 0 / 33%);
         border-radius: 5%;
         position: relative;
+        cursor: pointer;
 
 
 
-        p {
+        p,
+        a {
             margin: 7%;
             color: $darkGreen;
             font-size: 1.2rem;
+            text-decoration: none;
         }
 
         .green-footer {

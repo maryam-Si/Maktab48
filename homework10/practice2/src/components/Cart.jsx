@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-const Cart = ({ cart }) => {
-  const [addclass, setAddclass] = useState("");
-  function handleClick() {
-    setAddclass(cart.id);
-  }
+const Cart = ({ cart, handleClick }) => {
   return (
-    <div className="cart" onClick={handleClick}>
+    <div
+      className="cart"
+      onClick={() => {
+        handleClick(cart.id);
+      }}>
       <div className="img-container">
         <img src={cart.imgUrl} alt="" />
       </div>
-      <p>{cart.cartTitle}</p>
-      <div className={addclass == cart.id ? "green-footer" : ""}></div>
+      <a href="#">{cart.cartTitle}</a>
+      <div className={cart.isActive && "green-footer"}></div>
     </div>
   );
 };
