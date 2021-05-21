@@ -1,0 +1,98 @@
+@import './variable';
+
+.login-container {
+    font-family: "Far_Yekan";
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+        padding: 2%;
+        color: white;
+        font-weight: 100;
+        margin: 4% 0;
+
+    }
+
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        position: relative;
+
+        input {
+            font-family: "Far_Yekan";
+            background-color: #24333c;
+            border: 1px solid #a0b3b0;
+            padding: 1.5%;
+            margin-bottom: 6%;
+            text-align: right;
+            width: 100%;
+            color: $white;
+            font-size: 1em;
+
+            &::placeholder {
+                font-family: "Far_Yekan";
+
+            }
+
+
+
+        }
+
+        .btn-submit {
+            background-color: $primary;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.3em;
+            margin-top: 6%;
+        }
+
+        p {
+            position: absolute;
+            right: 0;
+            margin-top: 1%;
+            text-decoration: none;
+            color: $primary;
+            top: 62%;
+            cursor: pointer;
+
+        }
+
+        .inline {
+            display: flex;
+            flex-direction: row;
+            flex-basis: 48%;
+            justify-content: space-between;
+
+            input {
+                width: 47%;
+            }
+        }
+
+        .pass-container {
+            position: relative;
+
+            input {
+
+                padding: 5px 30px 5px 10px;
+                font-size: 1em;
+                font-weight: 100;
+
+            }
+
+            img {
+                cursor: pointer;
+                position: absolute;
+                width: 20px;
+                left: 3%;
+                top: 38%;
+                color: $white;
+            }
+        }
+    }
+
+}

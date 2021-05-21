@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+}
+
+
+
+.background {
+  position: static;
+
+  margin: 0 auto;
+  background-color: #c1bdba;
+  padding: 8%;
+
+}
+
+
+
+@media (min-width: 768px) {
+  .background {
+    position: static;
+    margin: 0 auto;
+    background-color: #c1bdba;
+    padding: 4%;
+    width: 50%;
+  }
+}
+
+
+
+@media (min-width: 1440px) {
+  .background {
+    position: static;
+    margin: 0 auto;
+    background-color: #c1bdba;
+    padding: 2%;
+    width: 37%;
+  }
+}
+
+.welcome {
+  background-color: #c1bdba;
+  width: 40%;
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

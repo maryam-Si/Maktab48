@@ -1,0 +1,87 @@
+.register-container {
+  font-family: "Far_Yekan";
+}
+.register-container h1 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 2%;
+  color: #ffffff;
+  font-weight: 100;
+}
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-container form input {
+  font-family: "Far_Yekan";
+  background-color: #24333c;
+  border: 1px solid #a0b3b0;
+  padding: 1.5%;
+  margin-bottom: 6%;
+  text-align: right;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1em;
+}
+.register-container form input::placeholder {
+  font-family: "Far_Yekan";
+}
+.register-container form .btn-submit {
+  background-color: #1ab188;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1em;
+  margin-bottom: 1%;
+}
+.register-container form .inline {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 48%;
+  justify-content: space-between;
+}
+.register-container form .inline div {
+  flex-basis: 46%;
+}
+.register-container form .inline div p {
+  text-align: right;
+}
+.register-container form .pass-container {
+  position: relative;
+}
+.register-container form .pass-container input {
+  padding: 5px 30px 5px 10px;
+  font-size: 1em;
+  font-weight: 100;
+}
+.register-container form .pass-container img {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  left: 3%;
+  top: 8px;
+  color: #ffffff;
+}
+.register-container form .select-container {
+  font-family: "Far_Yekan";
+  background-color: #24333c;
+  padding: 1.5%;
+  margin-bottom: 6%;
+  text-align: right;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1em;
+}
+.register-container form .select-container label {
+  margin-left: 2%;
+  font-size: 1em;
+}
+.register-container form .select-container select {
+  font-size: 1em;
+  text-align: center;
+  padding: 1%;
+  font-family: "Far_Yekan";
+}
+
+/*# sourceMappingURL=register.css.map */

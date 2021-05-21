@@ -1,0 +1,75 @@
+.login-container {
+  font-family: "Far_Yekan";
+}
+.login-container h1 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 2%;
+  color: white;
+  font-weight: 100;
+  margin: 4% 0;
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.login-container form input {
+  font-family: "Far_Yekan";
+  background-color: #24333c;
+  border: 1px solid #a0b3b0;
+  padding: 1.5%;
+  margin-bottom: 6%;
+  text-align: right;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1em;
+}
+.login-container form input::placeholder {
+  font-family: "Far_Yekan";
+}
+.login-container form .btn-submit {
+  background-color: #1ab188;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.3em;
+  margin-top: 6%;
+}
+.login-container form p {
+  position: absolute;
+  right: 0;
+  margin-top: 1%;
+  text-decoration: none;
+  color: #1ab188;
+  top: 62%;
+  cursor: pointer;
+}
+.login-container form .inline {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 48%;
+  justify-content: space-between;
+}
+.login-container form .inline input {
+  width: 47%;
+}
+.login-container form .pass-container {
+  position: relative;
+}
+.login-container form .pass-container input {
+  padding: 5px 30px 5px 10px;
+  font-size: 1em;
+  font-weight: 100;
+}
+.login-container form .pass-container img {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  left: 3%;
+  top: 38%;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=login.css.map */

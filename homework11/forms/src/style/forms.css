@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Far_Yekan;
+  src: url("../assets/fonts/Far_Yekan.ttf") format("truetype");
+  font-weight: normal;
+}
+.container {
+  font-family: "Far_Yekan";
+  margin: 2px;
+  background-color: #24333c;
+  padding: 25px;
+  box-shadow: 2px 4px 4px #3f3f3f;
+}
+.container .btn {
+  font-family: "Far_Yekan";
+  border: none;
+  width: 50%;
+  color: #a0b3b0;
+  background-color: #435359;
+  padding: 2%;
+}
+.container .active {
+  background-color: #1ab188;
+}
+
+/*# sourceMappingURL=forms.css.map */

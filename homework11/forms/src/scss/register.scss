@@ -1,0 +1,145 @@
+@import './variable';
+
+.register-container {
+    font-family: "Far_Yekan";
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+        padding: 2%;
+        color: $white;
+        font-weight: 100;
+
+
+    }
+
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        input {
+            font-family: "Far_Yekan";
+            background-color: $main;
+            border: 1px solid $secondary;
+            padding: 1.5%;
+            margin-bottom: 6%;
+            text-align: right;
+            width: 100%;
+            color: $white;
+            font-size: 1em;
+
+            &::placeholder {
+                font-family: "Far_Yekan";
+
+            }
+
+
+
+        }
+
+        .btn-submit {
+            background-color: $primary;
+            width: 100%;
+            text-align: center;
+            color: $white;
+            font-size: 1em;
+            margin-bottom: 1%;
+        }
+
+
+
+        .inline {
+            display: flex;
+            flex-direction: row;
+            flex-basis: 48%;
+            justify-content: space-between;
+
+            div {
+                flex-basis: 46%;
+
+                p {
+                    text-align: right;
+                }
+            }
+
+
+
+        }
+
+        .pass-container {
+            position: relative;
+
+            input {
+
+                padding: 5px 30px 5px 10px;
+                font-size: 1em;
+                font-weight: 100;
+            }
+
+            img {
+                cursor: pointer;
+                position: absolute;
+                width: 20px;
+                left: 3%;
+                top: 8px;
+                color: $white;
+            }
+        }
+
+        .select-container {
+            font-family: "Far_Yekan";
+            background-color: #24333c;
+            padding: 1.5%;
+            margin-bottom: 6%;
+            text-align: right;
+            width: 100%;
+            color: #ffffff;
+            font-size: 1em;
+
+            label {
+                margin-left: 2%;
+                font-size: 1em;
+            }
+
+            select {
+                font-size: 1em;
+                text-align: center;
+                padding: 1%;
+                font-family: "Far_Yekan";
+            }
+        }
+
+    }
+
+}
+
+// @media (min-width: 320px) {
+//     .register-container {
+//         font-family: "Far_Yekan";
+//         h1 {
+//             font-size: 1em;
+
+//         }
+
+//         form {
+//             .select-container {
+
+//                 font-size: 1.5em;
+//             }
+
+//             input {
+
+//                 font-size: 1.5em;
+//             }
+
+//             .pass-container input {
+//                 padding: 5px 30px 5px 10px;
+//                 font-size: 1.5em;
+//                 font-weight: 100;
+//             }
+//         }
+
+//     }
