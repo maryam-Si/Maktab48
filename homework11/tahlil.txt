@@ -1,0 +1,3 @@
+dar in ghete code mikhahim yek table ra filter konim bein surat ke
+ruye hameye tr ha loop mizane va avalin td har row ro meghdaresho migire va barresi mikone ke 
+meghdare input dakhele td hast ya na agar nabud displaye on ro none mikone
