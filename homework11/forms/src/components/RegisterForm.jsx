@@ -3,7 +3,7 @@ import "../style/register.css";
 import showPassword from "../assets/images/view.svg";
 import hidePassword from "../assets/images/visibility.svg";
 
-const RegisterForm = ({ getInfo, changeForm }) => {
+const RegisterForm = ({ getInfo, changeFlag }) => {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,7 +31,7 @@ const RegisterForm = ({ getInfo, changeForm }) => {
   };
 
   const PROVINCE = [
-    { id: 1, name: "تهران", city: ["ورامین", "اسلامشهر"] },
+    { id: 1, name: "تهران", city: ["ورامین", "تهران"] },
     { id: 2, name: "البرز", city: ["کرج", "طالقان"] },
     { id: 3, name: "فارس", city: ["آباده", "شیراز"] },
     { id: 4, name: "مازندران", city: ["آمل", "رامسر"] },
@@ -53,7 +53,7 @@ const RegisterForm = ({ getInfo, changeForm }) => {
     }
 
     if (name) {
-      if (!name.match(/^[a-zA-Z]+$/)) {
+      if (!name.match(/^[\u0600-\u06FF\s]+$/)) {
         formIsValid = false;
         errors["name"] = " نام معتبر نیست";
       }
@@ -65,7 +65,7 @@ const RegisterForm = ({ getInfo, changeForm }) => {
     }
 
     if (lastName) {
-      if (!lastName.match(/^[a-zA-Z]+$/)) {
+      if (!lastName.match(/^[\u0600-\u06FF\s]+$/)) {
         formIsValid = false;
         errors["lastName"] = " نام خانوادگی معتبر نیست";
       }
@@ -121,7 +121,7 @@ const RegisterForm = ({ getInfo, changeForm }) => {
     if (handleValidation()) {
       alert(" ثبت نام موفقیت آمیز بود");
       getInfo(information);
-      changeForm(5);
+      changeFlag(5);
     } else {
       alert("فرم دارای خطاست");
     }
