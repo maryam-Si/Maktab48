@@ -10,12 +10,8 @@ import {
   Container,
   AppBar,
   Toolbar,
-  Button,
-  IconButton,
   Typography,
-  Grid,
-  Avatar,
-  StylesProvider
+  Grid
 } from "@material-ui/core";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 const theme = createMuiTheme({
@@ -84,7 +80,7 @@ const UserPage = ({ data, ...props }) => {
           </Grid>
 
           <Grid container justify="center" alignItems="center">
-            <Grid item item lg={2}>
+            <Grid item lg={2}>
               <img
                 alt="Remy Sharp"
                 src={data.avatar}
